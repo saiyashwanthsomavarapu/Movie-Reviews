@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="container">
+	<form action="" method="POST" enctype="multipart/form-data" class="col s12">
+	<div claas="row">
+ 	   	<div class="file-field input-field">
+      		<div class="btn">
+        		<span>File</span>
+        		<input type="file" accept="image/*" name="cp" multiple>
+      		</div>
+     		<div class="file-path-wrapper">
+   				<input class="file-path validate" name="cphoto" type="text">
+      		</div>
+    	</div>
+	</div>
+	</form>
+</div>
+
+{% endblock %}

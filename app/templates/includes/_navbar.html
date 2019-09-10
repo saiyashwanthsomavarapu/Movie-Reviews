@@ -1,0 +1,48 @@
+  <nav style="background-color:#152541;"><!--:#123b56-->
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo hide-on-small-only"><img  width="100" height="100" style="margin-top:-19px;position:absolute;" src="{{ url_for('static', filename='images/untitled-1.png')}}"/><i style="margin:0px 0px 0px 90px; ">prime movies</i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      {% if not session.adlogged_in %}
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a>
+        {% if session.logged_in %}
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/register_form">Register</a></li>
+        <li><a href="/user_login_request">Login</a></li>
+        {% endif %}
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/">Home</a>
+        {% if session.logged_in %}
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/register_form">Register</a></li>
+        <li><a href="/user_login_request">Login</a></li>
+        {% endif %}
+      </ul>
+      {% else %}
+        <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a>
+        {% if session.adlogged_in %}
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/admin_register_form">Register</a></li>
+        <li><a href="/logout">Logout</a></li>
+        {% endif %}
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/">Home</a>
+        {% if session.adlogged_in %}
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/admin_register_form">Register</a></li>
+        <li><a href="/logout">Logout</a></li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+  </nav>
+  <script>
+    $(document).ready(function(){
+      $(".button-collapse").sideNav();
+    })
+  </script>

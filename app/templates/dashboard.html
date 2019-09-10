@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div class="container" style="padding:50px 0px 200px 0px;">
+  <div class="down">
+  <h3 class="thin center">All Uploaded Movies Are Here</h3>
+  <hr>
+  <table class="bordered">
+    <thead>
+      <tr>
+        <th>Movie</th>
+        <th>Date</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for take in result %}
+      <tr>
+        <td>{{ take.title }}</td>
+        <td>{{ take.rdate }}</td>
+        <td>
+          <form action="{{ url_for('delete_movie', id=take.id)}}" method="POST">
+            <button class="z-depth-2 red btn">delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+{% endblock %}

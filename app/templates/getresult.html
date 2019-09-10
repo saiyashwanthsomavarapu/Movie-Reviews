@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block body %}
+{% for fetch in fetchs %}
+	<img class="" src="{{ url_for('static',filename=fetch.cphoto)}}" width="100%" height="500px" >
+	<div class="profileimage hide-on-small-only" style="position: absolute;border:10px solid white;margin:-200px 0px 0px 1050px;">
+		<img src="{{ url_for('static',filename=fetch.pphoto)}}" width="213px" height="299px">
+	</div>
+	<div class="ratingblock">
+		<div class="row" style="border:1px solid none;margin-top:-6px;background-color: #f1f1f1">
+			<div class="col s12 m4 13" style="background-color: #0e3967;">
+				<i class="material-icons" style="position: absolute;color:white;font-size:100px;margin-top: 20px;margin-left:50px; ">star_rate</i>
+				<p style="text-align: center;color:#ffffff;font-size: 45px; ">{{ fetch.rating }}<small style="font-size: 18px;" class="thin">Rating</small></p>
+			</div>
+			<div class="col s12 m4 13">
+				<p style="text-align: center;padding-top: 30px;font-size: 20px;background-color: #f1f1f1" class="thin">Release Date<br><b>{{ fetch.rdate }}</b></p>
+			</div>
+			<div class="col s12 m4 13 hide-on-small-only">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="contentblock">
+			<p class="flow-text" style="font-size:25px;font-family:Arial;">{{ fetch.body | safe }}</p>
+		</div>
+		<div class="row">
+  			<div class="card col s12 m3 13" style="margin-left: 40px;">
+    			<div class="card-image waves-effect waves-block waves-light">
+      				<img class="activator" src="{{url_for('static', filename= fetch.pphoto )}}"/>
+    			</div>
+    			<div class="card-content">
+      				<a href="movie_info/{{ fetch.id }}"><span class="card-title grey-text text-darken-4">{{ fetch.title }}</span></a>
+    			</div>
+ 		 	</div>
+		</div>
+	</div>
+
+{% endfor %}
+{% endblock %}

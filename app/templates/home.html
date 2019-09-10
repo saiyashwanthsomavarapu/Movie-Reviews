@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block body %}
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.49),rgba(0,0,0,0.89)), url('{{url_for('static', filename='images/logo.jpg')}}');text-align:center;background-size: 100% 100%;padding:300px 0px 300px 0px; ">
+<p class="text-flow" style="color:white;margin: 0px;font-size: 50px">Prime Movies</p>
+{% if not session.logged_in %}
+<a class="btn transparent" href="/user_login_request" style="color:white;margin: 0px;border:1px solid #008f8d;">login</a>
+<a class="btn transparent" href="/register_form" style="color:white;margin: 0px;border:1px solid #008f8d;">register</a>
+{% elif session.adlogged_in %}
+<a class="btn transparent" href="/admin" style="color:white;margin: 0px;border:1px solid #008f8d;">Dashboard</a>
+{% elif session.logged_in %}
+<a class="btn transparent" href="/all_movie_collection" style="color:white;margin: 0px;border:1px solid #008f8d;">Dashboard</a>
+{% endif %}
+</div>
+{% endblock %}
+</body>
+</html>

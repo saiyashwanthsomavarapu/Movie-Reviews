@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block body %}
+ 	{% for view in views %}
+ 		<p>{{ view.title }}</p>
+ 		<p>{{ view.rating }}</p>
+ 		<p>{{ view.rdate }}</p>
+ 		<img src="{{ url_for('static',filename=view.cphoto) }}"/>
+ 		<img src="{{ url_for('static',filename=view.pphoto) }}"/>
+ 		<p>{{ view.body }}</p>
+ 	{% endfor %}
+{% endblock %}

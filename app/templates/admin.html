@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<div class="container">
+	<form action="{{ url_for('admin')}}" method="POST" enctype="multipart/form-data" class="col s2" style="padding:100px 0px 200px 0px;">
+		<center>
+		<a href="/dashboard" class="">Dashboard</a>
+		</center>
+		<div class="row">
+			<h4>cover photo</h4>
+ 	   		<div class="file-field input-field">
+      			<div class="btn z-depth-2" style="background-color: #00baff;">
+        			<span>File</span>
+        			<input type="file" accept="image/*" name="cp" multiple>
+      			</div>
+      			<div class="file-path-wrapper">
+       				<input class="file-path validate" id="cphot" type="text">
+      			</div>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<h4>profile photo</h4>
+    		<div class="file-field input-field">
+      			<div class="btn" style="background-color: #00baff;">
+        			<span>File</span>
+        			<input type="file" accept="imges/*" name="pp" multiple>
+      			</div>
+      			<div class="file-path-wrapper">
+        			<input class="file-path validate" id="pphot" type="text">
+      			</div>
+    		</div>
+    	</div>
+		<div claas="row">
+			<h4>actress photo</h4>
+ 	   		<div class="file-field input-field">
+      			<div class="btn" style="background-color: #00baff;">
+        			<span>File</span>
+        			<input type="file" accept="image/*" name="act[]" multiple="">
+      			</div>
+     			<div class="file-path-wrapper">
+   					<input class="file-path validate" name="actress" type="text">
+      			</div>
+    		</div>
+		</div>
+    	<div class="left-align" >
+			<button class="btn" style="background-color: #00baff;">submit</button>
+		</div>
+	</form>
+</div>
+{% endblock %}

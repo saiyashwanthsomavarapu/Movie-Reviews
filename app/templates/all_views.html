@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.49),rgba(0,0,0,0.89)), url('{{url_for('static', filename='images/reel.jpg')}}');text-align:center;background-size: 100% auto;padding:100px 0px 100px 0px; ">
+<p style="color:white;margin: 0px;font-size: 50px;">Movie Updates</p>
+</div>
+<div class="container" style="padding-top:30px;">
+	
+	<div class="row">
+  		{% for view in views %}
+  		<div class="card col s12 m3 13" style="margin-left: 40px;">
+    		<div class="card-image waves-effect waves-block waves-light">
+      			<img class="activator" src="{{url_for('static', filename= view.pphoto )}}"/>
+    		</div>
+    		<div class="card-content">
+      			<a href="movie_info/{{ view.id }}"><span class="card-title grey-text text-darken-4">{{ view.title | safe }}</span></a>
+    		</div>
+ 		 </div>
+ 		 {% endfor %}
+ 	</div>
+</div>
+{% endblock %}

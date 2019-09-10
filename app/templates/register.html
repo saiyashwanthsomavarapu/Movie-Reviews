@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="container row">
+	<form action="" method="POST" class="col s12"  style="border:1px solid none;box-shadow:0px 0px 1px 0px black;margin-top:20px;padding-bottom:50px; ">
+		<p style="font-size: 30px;font-weight: 300;font-family:  Kanit,sans-serif;" class="thin center">Sign Up With Mail Id</p>
+		<div class="row">
+			<div class="input-field col s12">
+				<input placeholder="Email Id" type="email" id="email" name="email">
+				<label for="email">Email Id</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input placeholder="User Name" type="text" id="username" name="username">
+				<label for="username">User Name</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input placeholder="Password" type="password" id="password" name="password">
+				<label for="password">Password</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input placeholder="Confirm Password" type="password" id="cpass" name="cpassword">
+				<label for="cpass">Confirm Password</label>
+			</div>
+		</div>
+		<p>I Agree to <span style="color:#00baff;">Terms and Conditions</span></p>
+		<div class="left-align">
+			<button class="btn" style="background-color:#00baff;">Verify And Continue</button>
+		</div>
+	</form>
+	<div class="divider"></div>
+</div>
+
+{% endblock %}
+
